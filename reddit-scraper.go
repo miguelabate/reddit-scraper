@@ -55,7 +55,7 @@ func getURLs(subreddit string, outfile string, limit int) {
 	for afterCode != "END" {
 		results, newAfter := doRequest(afterCode, subreddit)
 
-		sendVerboseMsg("Urls fetched: "+ strconv.Itoa(len(results)))
+		sendVerboseMsg("Urls fetched in batch: "+ strconv.Itoa(len(results)))
 
 		allUrls = append(allUrls, results...)
 		afterCode = newAfter
@@ -112,7 +112,7 @@ func doRequest(afterCode string, subreddit string) ([]string, string) {
 	check(err)
 	body, err := ioutil.ReadAll(resp.Body)
 
-	//unmarshall json response ina generic way using maps
+	//unmarshal json response ina generic way using maps
 	var result map[string]interface{}
 	json.Unmarshal(body, &result)
 	data := result["data"].(map[string]interface{})

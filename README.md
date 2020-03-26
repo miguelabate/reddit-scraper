@@ -4,7 +4,7 @@ Simple tool to fetch all the Urls from the posts of a given SubReddit
 
 #Build
 ```
-go build -o reddit-scraper main.go
+go build reddit-scraper.go
 ```
 
 #Usage

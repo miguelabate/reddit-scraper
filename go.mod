@@ -1,6 +1,6 @@
 module github.com/miguelabate/reddit-scraper
 
-go 1.12
+go 1.14
 
 require (
 	github.com/devfacet/gocmd v3.1.0+incompatible
